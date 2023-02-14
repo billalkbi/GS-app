@@ -68,7 +68,7 @@ public class login extends AppCompatActivity {
                         if(task.isSuccessful()){
                             showMainActivity();
                         }else{
-                            Toast.makeText(login.this, "echec d'auth"+email+pwd, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "echec d'authentification "+email+" "+pwd, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

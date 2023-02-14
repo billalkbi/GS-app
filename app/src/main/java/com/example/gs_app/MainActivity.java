@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvfirstName, tvlastName, tvemail;
+    TextView tvfullName,  tvemail;
 
 
     @Override
@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        tvfirstName = findViewById(R.id.TVfirstName);
-        tvlastName = findViewById(R.id.TVlastName);
+        tvfullName = findViewById(R.id.TVfullName);
         tvemail= findViewById(R.id.TVemail);
 
         Button btnLogout= findViewById(R.id.logButton);
@@ -53,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull com.google.firebase.database.DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 if(user != null){
-                    tvfirstName.setText("firstname: "+ user.fistName);
-                    tvlastName.setText("lastname :"+user.lastName);
+                    tvfullName.setText("firstname: "+ user.fullName);
                     tvemail.setText("Email: "+user.email);
                 }
             }

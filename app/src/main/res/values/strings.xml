@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">app_gs</string>
+
+    <string name="create_your">
+
+CREATE YOUR ACCOUNT
+</string>
+
+    <string name="register_fo">
+
+Register for a new account, we are glad to welcome you
+</string>
+
+    <string name="save">
+
+SAVE
+</string>
 </resources>

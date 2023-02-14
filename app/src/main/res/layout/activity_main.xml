@@ -7,24 +7,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/TVlastName"
-        android:layout_width="196dp"
-        android:layout_height="48dp"
-        android:text="LASTNAME"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
-
-
-    <TextView
-        android:id="@+id/TVfirstName"
+        android:id="@+id/TVfullName"
         android:layout_width="186dp"
         android:layout_height="46dp"
-        android:text="FIRSTNAME"
+        android:text="FULLNAME"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,8 +21,8 @@
 
     <TextView
         android:id="@+id/TVemail"
-        android:layout_width="114dp"
-        android:layout_height="37dp"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
         android:text="EMAIL"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
