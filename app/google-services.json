@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "544473551418",
+    "project_id": "gs-app-10d25",
+    "storage_bucket": "gs-app-10d25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544473551418:android:82eb3e8c0040f3ca7e1b03",
+        "android_client_info": {
+          "package_name": "com.example.gs_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544473551418-1ahla43s9dqda8mj7sr10f548m6m2hko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCynAw7OD1oR2SDFvNAYwPxTh2nu3tvdfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544473551418-1ahla43s9dqda8mj7sr10f548m6m2hko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
