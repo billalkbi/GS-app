@@ -26,8 +26,11 @@ public class Register extends AppCompatActivity {
     private EditText inputFullName;
     private EditText inputEmail;
     private EditText inputPassword;
+
     private EditText inputPasswordConfirm;
     private Button btnSignUp;
+
+    private static final String typeUser = "client";
 
     private Button Already;
     private ProgressDialog progressDialog;
@@ -91,7 +94,7 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    User user = new User(fullName, email);
+                                    User user = new User(fullName, email, typeUser);
                                     progressDialog.show();
                                     FirebaseDatabase.getInstance().getReference("users")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
