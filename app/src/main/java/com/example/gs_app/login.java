@@ -19,8 +19,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class login extends AppCompatActivity {
     FirebaseAuth mAuth;
-
-
     Button submitButton;
     public Firebase ref;
     @Override
@@ -40,12 +38,20 @@ public class login extends AppCompatActivity {
             }
         });
 
+        TextView forgotPWD = findViewById(R.id.forgotPWDButtonView);
+        forgotPWD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {methodeSwitchToForgotPWD();}
+        });
+
         TextView txtSwitchToRegister = findViewById(R.id.registerButtonView);
         txtSwitchToRegister.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){txtSwitchToRegister();
+            public void onClick(View view){methodeSwitchToRegister();
             }
         });
+
+
     }
 
     public void authenticateUser(){
@@ -80,8 +86,14 @@ public class login extends AppCompatActivity {
         finish();
     }
 
-    private void txtSwitchToRegister(){
+    private void methodeSwitchToRegister(){
         Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void methodeSwitchToForgotPWD(){
+        Intent intent = new Intent(this, forgotPWD.class);
         startActivity(intent);
         finish();
     }
