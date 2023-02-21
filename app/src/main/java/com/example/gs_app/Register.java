@@ -87,6 +87,7 @@ public class Register extends AppCompatActivity {
 
                 if (!password.equals(passwordConfirm)) {
                     Toast.makeText(getApplicationContext(), "Passwords do not match!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 auth.createUserWithEmailAndPassword(email, password)

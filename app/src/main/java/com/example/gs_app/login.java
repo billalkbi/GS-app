@@ -26,7 +26,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login2);
         mAuth= FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!= null){
             finish();
@@ -43,8 +43,7 @@ public class login extends AppCompatActivity {
         TextView txtSwitchToRegister = findViewById(R.id.registerButtonView);
         txtSwitchToRegister.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-                txtSwitchToRegister();
+            public void onClick(View view){txtSwitchToRegister();
             }
         });
     }

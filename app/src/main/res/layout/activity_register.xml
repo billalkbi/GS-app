@@ -4,9 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_colors"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:background="@drawable/android_lar2" />
 
     <TextView
         android:id="@+id/create_your"
@@ -97,7 +103,9 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:padding="20dp"
-            android:background="@drawable/rounded_corners"
+            android:background="@drawable/rounded_corners_register"
+            android:elevation="4dp"
+            android:translationZ="4dp"
             android:drawablePadding="15dp"
             />
 
@@ -112,7 +120,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:padding="20dp"
-            android:background="@drawable/rounded_corners"
+            android:background="@drawable/rounded_corners_register"
             android:drawablePadding="15dp"
             />
 
@@ -120,17 +128,16 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:fontFamily="sans-serif"
-            android:drawableLeft="@drawable/vector"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:padding="20dp"
-            android:background="@drawable/rounded_corners"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/rounded_corners_register"
+            android:drawableLeft="@drawable/vector"
             android:drawablePadding="15dp"
+            android:fontFamily="sans-serif"
+            android:hint="Password"
             android:inputType="textPassword"
-            />
+            android:padding="20dp" />
 
         <EditText
             android:id="@+id/passwordConf"
@@ -143,7 +150,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:padding="20dp"
-            android:background="@drawable/rounded_corners"
+            android:background="@drawable/rounded_corners_register"
             android:drawablePadding="15dp"
             android:inputType="textPassword"
             />

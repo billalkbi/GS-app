@@ -35,25 +35,28 @@ app:srcCompat="@drawable/img_bestbuy" />
         android:id="@+id/loginText"
         android:layout_width="166dp"
         android:layout_height="65dp"
+        android:fontFamily="sans-serif-black"
         android:text="LOGIN"
+        android:textColor="@color/black"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintVertical_bias="0.357" />
 
     <ImageView
         android:id="@+id/imageMail"
-        android:layout_width="41dp"
-        android:layout_height="32dp"
+        android:layout_width="48dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519"
+        app:layout_constraintVertical_bias="0.518"
         app:srcCompat="@drawable/email" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -63,7 +66,7 @@ app:srcCompat="@drawable/img_bestbuy" />
         android:layout_height="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintHorizontal_bias="0.654"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.524" />
@@ -81,17 +84,7 @@ app:srcCompat="@drawable/img_bestbuy" />
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.463" />
 
-    <ImageView
-        android:id="@+id/imageMdp"
-        android:layout_width="41dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673"
-        app:srcCompat="@drawable/mdp" />
+
 
     <TextView
         android:id="@+id/mdpText"
@@ -124,24 +117,27 @@ app:srcCompat="@drawable/img_bestbuy" />
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.676" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submitLoginView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:onClick="verification"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="40dp"
+        android:background="@drawable/round_button"
+
+        android:foregroundGravity="center"
+        android:text="LOGIN"
+        android:textAppearance="@style/save"
+        app:layout_constraintBottom_toBottomOf="@+id/registerButtonView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+        app:layout_constraintVertical_bias="0.989"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/registerButtonView"
@@ -151,14 +147,27 @@ app:srcCompat="@drawable/img_bestbuy" />
         android:paddingLeft="1dp"
         android:paddingRight="20dp"
 
+        style="?android:attr/borderlessButtonStyle"
         android:paddingBottom="1dp"
         android:text="pas encore inscrit?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintVertical_bias="0.953" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="36dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672"
+        app:srcCompat="@drawable/vector"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
