@@ -81,7 +81,7 @@ public class login extends AppCompatActivity {
 
     }
     private void showMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, addAppointment.class);
         startActivity(intent);
         finish();
     }

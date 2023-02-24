@@ -49,12 +49,11 @@ public class Register extends AppCompatActivity {
         inputPassword = (EditText) findViewById(R.id.password);
         inputPasswordConfirm = (EditText) findViewById(R.id.passwordConf);
         btnSignUp = (Button) findViewById(R.id.save);
-        progressDialog = new ProgressDialog(this);
         Already = (Button) findViewById(R.id.already);
 
         Already.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {  txtSwitchToRegister();  }
+            public void onClick(View view) {  txtSwitchToMain();  }
         });
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -96,18 +95,17 @@ public class Register extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     User user = new User(fullName, email, typeUser);
-                                    progressDialog.show();
+
                                     FirebaseDatabase.getInstance().getReference("users")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
-                                                        Toast.makeText(Register.this, "User had been added succesfully", Toast.LENGTH_SHORT).show();
-                                                        progressDialog.dismiss();
+                                                      txtSwitchToMain();
 
                                                     } else {
                                                         Toast.makeText(Register.this, "Failed to register, try again", Toast.LENGTH_SHORT).show();
-                                                        progressDialog.dismiss();
+
                                                     }
                                                 }
                                             });
@@ -119,8 +117,8 @@ public class Register extends AppCompatActivity {
             };
         });
     }
-    private void txtSwitchToRegister(){
-        Intent intent = new Intent(this, login.class);
+    private void txtSwitchToMain(){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
