@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".manageApp">
+
+    <RelativeLayout
+        android:layout_width="579dp"
+        android:layout_height="418dp"
+        android:background="@drawable/android_lar4"
+        >
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:id="@+id/rectangle_6"
+        android:layout_width="fill_parent"
+        android:layout_height="646dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="191dp"
+        android:background="@drawable/rectangle_6"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/geeksquad"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="215dp"
+        android:fontFamily="@font/barlow_bold"
+        android:text="YOUR APPOINTMENTS"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+
+</RelativeLayout>

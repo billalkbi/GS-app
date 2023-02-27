@@ -33,7 +33,7 @@ public class login extends AppCompatActivity {
             return;
         }
         submitButton = findViewById(R.id.submitLoginView);
-        submitButton.setOnClickListener( new View.OnClickListener(){
+        submitButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 authenticateUser();
@@ -55,8 +55,14 @@ public class login extends AppCompatActivity {
         String email = getEmail.getText().toString();
         String pwd =getPWD.getText().toString();
 
-        if(email.isEmpty()||pwd.isEmpty()){
-            Toast.makeText(this, "veuillez remplir tout les champs svp.", Toast.LENGTH_SHORT).show();
+        if(email.isEmpty()){
+            getEmail.setError("Please enter an email");
+            getEmail.requestFocus();
+        return;
+        }
+        if(pwd.isEmpty()){
+            getPWD.setError("Please enter a password");
+            getPWD.requestFocus();
             return;
         }
 
