@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //mainToBook()
+                mainToBook();
             }
         });
 
@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    /*private void mainToBook(){
+    private void mainToBook(){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(this, addAppointment.class);
         startActivity(intent);
         finish();
     }
-    */
+
 
 
 
