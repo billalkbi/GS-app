@@ -24,7 +24,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login2);
+        setContentView(R.layout.activity_login);
         mAuth= FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!= null){
             finish();
@@ -59,7 +59,7 @@ public class login extends AppCompatActivity {
         EditText getPWD = findViewById(R.id.pwdInput);
 
         String email = getEmail.getText().toString();
-        String pwd =getPWD.getText().toString();
+        String pwd =getPWD.getText().toString().trim();
 
         if(email.isEmpty()||pwd.isEmpty()){
             Toast.makeText(this, "veuillez remplir tout les champs svp.", Toast.LENGTH_SHORT).show();

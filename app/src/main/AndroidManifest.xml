@@ -12,6 +12,9 @@
         android:theme="@style/Theme.App_gs"
         tools:targetApi="31">
         <activity
+            android:name=".listAppointment"
+            android:exported="false" />
+        <activity
             android:name=".addAppointment"
             android:exported="false" />
         <activity

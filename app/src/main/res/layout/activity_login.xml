@@ -1,173 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F58025"
-    tools:context=".login">
-
-<ImageView
-android:id="@+id/bestBuyLogo"
-android:layout_width="160dp"
-android:layout_height="152dp"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintHorizontal_bias="0.127"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent"
-app:layout_constraintVertical_bias="0.051"
-app:srcCompat="@drawable/img_bestbuy" />
+    tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/geekSquadLogo"
-        android:layout_width="198dp"
-        android:layout_height="148dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058"
-        app:srcCompat="@drawable/geeksquad" />
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/android_lar"
+        android:paddingLeft="20dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:columnCount="2"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/bestBuyLogo"
+            android:layout_width="160dp"
+            android:layout_height="152dp"
+            app:srcCompat="@drawable/img_bestbuy" />
+        <ImageView
+            android:id="@+id/geekSquadLogo"
+            android:layout_width="160dp"
+            android:layout_height="152dp"
+            android:paddingLeft="20dp"
+            app:srcCompat="@drawable/geeksquad" />
+    </GridLayout>
 
     <TextView
         android:id="@+id/loginText"
-        android:layout_width="166dp"
-        android:layout_height="65dp"
-        android:fontFamily="sans-serif-black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="LOGIN"
+        android:paddingLeft="48dp"
+        android:layout_marginTop="200dp"
         android:textColor="@color/black"
         android:textSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357" />
+        android:gravity="left" />
 
-    <ImageView
-        android:id="@+id/imageMail"
-        android:layout_width="48dp"
-        android:layout_height="31dp"
-        android:layout_marginLeft="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518"
-        app:srcCompat="@drawable/email" />
-
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/emailInput"
-        android:layout_width="330dp"
-
-        android:layout_height="39dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.654"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
-
-    <TextView
-        android:id="@+id/emailText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded_corners_login"
+        android:drawableLeft="@drawable/baseline_alternate_email_24"
+        android:drawablePadding="15dp"
+        android:fontFamily="sans-serif"
+        android:hint="EMAIL"
+        android:padding="20dp"
+        android:textSize="14dp"
+        android:inputType="textEmailAddress"/>
 
-
-
-    <TextView
-        android:id="@+id/mdpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PASSWORD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="358dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729">
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/pwdInput"
-        android:layout_width="337dp"
-        android:layout_height="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:hint="PASSWORD"
+        android:textSize="14dp"
+        android:drawableLeft="@drawable/vector"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:padding="20dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/rounded_corners_login"
+        android:drawablePadding="15dp"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.716"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM123456789!@#$%^*()_+{|?[]\,./*-+" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submitLoginView"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_margin="40dp"
-        android:background="@drawable/round_button"
-
-        android:foregroundGravity="center"
-        android:text="LOGIN"
-        android:textAppearance="@style/save"
-        app:layout_constraintBottom_toBottomOf="@+id/registerButtonView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/registerButtonView"
+        android:id="@+id/forgotPWDButtonView"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="223dp"
         android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="465dp"
+        android:layout_marginLeft="200dp"
         android:backgroundTint="#F58025"
-        android:paddingLeft="1dp"
-        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:text="forgot password ?"
+        android:textColor="@color/white" />
 
-        style="?android:attr/borderlessButtonStyle"
-        android:paddingBottom="1dp"
-        android:text="pas encore inscrit?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="560dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:rowCount="2">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="36dp"
-        android:layout_height="38dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672"
-        app:srcCompat="@drawable/vector"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submitLoginView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/round_button"
+            android:text="LOGIN"
+            android:textAppearance="@style/save"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registerButtonView"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="223dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#F58025"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="10dp"
+            android:text="s'inscrire"
+            android:textColor="@color/white" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
