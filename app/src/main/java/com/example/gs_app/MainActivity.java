@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         tvfullName = findViewById(R.id.TVfullName);
-        tvemail= findViewById(R.id.TVemail);
+
 
         Button btnLogout= findViewById(R.id.logButton);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -45,15 +45,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnBook_management= findViewById(R.id.btnBook);
+        btnBook_management.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mainToBook();
+            }
+        });
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference= database.getReference("users").child(currentUser.getUid());
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull com.google.firebase.database.DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-                if(user != null){
-                    tvfullName.setText("firstname: "+ user.fullName);
-                    tvemail.setText("Email: "+user.email);
+                if(user != null)
+                {
+                    tvfullName.setText(user.fullName);
                 }
             }
             @Override
@@ -63,11 +72,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     private void logoutUser(){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(this, login.class);
         startActivity(intent);
         finish();
     }
+
+    private void mainToBook(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, addAppointment.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+
 
 }
