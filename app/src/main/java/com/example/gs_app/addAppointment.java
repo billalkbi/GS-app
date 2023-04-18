@@ -13,6 +13,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.ApiException;
@@ -102,6 +103,15 @@ public class addAppointment extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_appointment2);
+
+        ImageView backBTN = findViewById(R.id.backArrow);
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+
         AddressText = findViewById(R.id.addressText);
 
         GS_DbRef = FirebaseDatabase.getInstance().getReference().child("appointment");
@@ -144,7 +154,7 @@ public class addAppointment extends AppCompatActivity  {
         //drop down menu store picker
         staticAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //liste stores
-        String[] items = new String[]{"LOCATION","anjou 084", "marcher central 992", "centre ville 651"};
+        String[] items = new String[]{"location","anjou 084", "marcher central 992", "centre ville 651"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, items);
@@ -260,13 +270,6 @@ public class addAppointment extends AppCompatActivity  {
             }
         });
 
-        Button cancelBTN = findViewById(R.id.cancelBTN);
-        cancelBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBack();
-            }
-        });
 
     }
 
@@ -279,7 +282,6 @@ public class addAppointment extends AppCompatActivity  {
         String fullName = getFullName.getText().toString();
         String description = getDescription.getText().toString();
         String dateApp = getDate.getText().toString();
-        String id = null;
         Appointment appointment = new Appointment(fullName, storeChoice, dateApp, timeChoice,reasenChoice,description);
 
         GS_DbRef.push().setValue(appointment);

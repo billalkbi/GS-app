@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,13 +28,29 @@ public class manageMyApp extends AppCompatActivity {
     DatabaseReference databaseReference;
     DatabaseReference databaseReference2;
     AppointmentAdapter appointmentAdapter;
+
     ArrayList<Appointment> list;
+
+    ImageView btnModify;
+
+    Appointment apptstocked;
     private String typeUser = globalVar.currentUser.typeUser ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_my_app);
+
+        ImageView backBTN = findViewById(R.id.backArrow);
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(manageMyApp.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         recyclerView = findViewById(R.id.appointmentList);
         databaseReference = FirebaseDatabase.getInstance().getReference("appointment");
         databaseReference2 = FirebaseDatabase.getInstance().getReference("appointment");
@@ -47,7 +64,7 @@ public class manageMyApp extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 boolean appointmentsFound = false;
-                list.clear(); // Clear the list before populating it
+                //list.clear(); // Clear the list before populating it
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Appointment appointment = dataSnapshot.getValue(Appointment.class);
                     if (globalVar.currentUser.fullName.equals(appointment.getFullName())) {
@@ -68,20 +85,26 @@ public class manageMyApp extends AppCompatActivity {
 
             }
         });
+
+
+
+
+
+
         appointmentAdapter.setOnItemClickListener(new AppointmentAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 if (position != RecyclerView.NO_POSITION) {
                     Appointment appointment = list.get(position);
 
-                    databaseReference2.addValueEventListener(new ValueEventListener() {
+                    databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot2) {
 
-                            for (DataSnapshot dataSnapshot2 : snapshot2.getChildren()) {
-                                Appointment appointmentDB = dataSnapshot2.getValue(Appointment.class);
+                            for (DataSnapshot dataSnapshot : snapshot2.getChildren()) {
+                                Appointment appointmentDB = dataSnapshot.getValue(Appointment.class);
                                 if ((appointment.dateAppointment.equals(appointmentDB.getDateAppointment())) && (appointment.timeAppointment.equals(appointmentDB.getTimeAppointment()))) {
-                                    dataSnapshot2.getRef().removeValue();
+                                    dataSnapshot.getRef().removeValue();
                                     list.remove(position);
                                     appointmentAdapter.notifyDataSetChanged();
                                     break;
@@ -99,17 +122,47 @@ public class manageMyApp extends AppCompatActivity {
 
             }
 
+            @Override
+            public void onModifyClick(int position) {
+
+                if (position != RecyclerView.NO_POSITION) {
+                    Appointment appointment = list.get(position);
+                    String description = appointment.description;
+                    String fullname = appointment.fullName;
+                    String date = appointment.dateAppointment;
+                    String time = appointment.timeAppointment;
+                    String store = appointment.store;
+                    String reason = appointment.reasenOfAppointment;
+
+
+
+                    Intent intent = new Intent(manageMyApp.this, modifyAppointment.class);
+                    intent.putExtra("description",description);
+                    intent.putExtra("fullname",fullname);
+                    intent.putExtra("date",date);
+                    intent.putExtra("time",time);
+                    intent.putExtra("store",store);
+                    intent.putExtra("reason",reason);
+
+                    startActivity(intent);
+                    finish();
+                }
+
+            }
+
+
+
             public void onDeleteButtonClick(Appointment appointment) {
 
             }
         });
-        Button cancelBTN = findViewById(R.id.cancelBTN);
+        /*Button cancelBTN = findViewById(R.id.cancelBTN);
         cancelBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goBack();
             }
-        });
+        });*/
     }
     private void goBack()
     {

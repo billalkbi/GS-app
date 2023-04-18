@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class register_tech extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register_tech);
 
         tvfullName = findViewById(R.id.TVfullName);
 
@@ -67,12 +68,8 @@ public class register_tech extends AppCompatActivity {
         inputPasswordConfirm = (EditText) findViewById(R.id.passwordConf);
         btnSignUp = (Button) findViewById(R.id.save);
         progressDialog = new ProgressDialog(this);
-        Already = (Button) findViewById(R.id.already);
 
-        Already.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {    }
-        });
+
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +150,15 @@ public class register_tech extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        ImageView backBTN = findViewById(R.id.backArrow);
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(register_tech.this, MainActivity_admin.class);
+                startActivity(intent);
             }
         });
 

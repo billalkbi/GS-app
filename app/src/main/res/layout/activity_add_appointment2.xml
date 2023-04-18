@@ -21,6 +21,17 @@
             android:layout_marginTop="20dp"
         />
 
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/baseline_arrow_back_24" />
+
         <TextView
             android:id="@+id/addressText"
             android:layout_width="123dp"
@@ -28,7 +39,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="50dp"
             android:text="TextView" />
 
 
@@ -85,7 +96,7 @@
         <EditText
             android:id="@+id/datePicker"
             android:layout_width="170dp"
-            android:layout_height="60dp"
+            android:layout_height="59dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="235dp"
@@ -108,7 +119,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="150dp"
-            android:layout_marginEnd="179dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/rounded_corners_register"
             android:spinnerMode="dropdown" />
@@ -116,7 +127,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/idBtnPickTime"
             android:layout_width="170dp"
-            android:layout_height="60dp"
+            android:layout_height="59dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="235dp"
             android:layout_marginRight="20dp"
@@ -128,7 +139,7 @@
         <Spinner
             android:id="@+id/spinnerReasenPicker"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="59dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="315dp"
@@ -139,7 +150,7 @@
         <EditText
             android:id="@+id/description"
             android:layout_width="match_parent"
-            android:layout_height="155dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="395dp"
             android:layout_marginRight="20dp"
@@ -154,36 +165,26 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveBTN"
             android:layout_width="100dp"
-            android:layout_height="55dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="290dp"
             android:layout_marginTop="530dp"
+            android:textAlignment="center"
             android:background="@drawable/round_button"
-            android:text="@string/save"
+            android:text="SAVE"
             android:textAppearance="@style/save" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/getBTN"
             android:layout_width="100dp"
-            android:layout_height="55dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="22dp"
             android:layout_marginLeft="290dp"
             android:layout_marginTop="530dp"
-            android:layout_marginEnd="294dp"
+            android:layout_marginEnd="288dp"
             android:background="@drawable/round_button"
             android:text="GET"
-            android:textAppearance="@style/save" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cancelBTN"
-            android:layout_width="100dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="530dp"
-            android:textColor="@color/black"
-            android:background="@drawable/rounded_corners_register"
-            android:text="CANCEL"
             android:textAppearance="@style/save" />
 
 

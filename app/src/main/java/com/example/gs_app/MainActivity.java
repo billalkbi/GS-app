@@ -50,8 +50,10 @@ public class MainActivity extends AppCompatActivity {
         btnBook_management.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                mainToManageMyApp();
+                //FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(MainActivity.this, manageMyApp.class);
+                startActivity(intent);
+                finish();
             }
         });
 

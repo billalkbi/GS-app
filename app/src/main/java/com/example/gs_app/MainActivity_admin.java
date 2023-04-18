@@ -49,7 +49,7 @@ public class MainActivity_admin extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity_admin.this, manageAppByTech.class);
+                Intent intent = new Intent(MainActivity_admin.this, register_tech.class);
                 startActivity(intent);
                 finish();
             }

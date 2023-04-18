@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,14 @@ public class manageAppByTech extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_app_by_tech);
+
+        ImageView backBTN = findViewById(R.id.backArrow);
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
 
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 
@@ -81,13 +90,7 @@ public class manageAppByTech extends AppCompatActivity {
 
             }
         });
-        Button cancelBTN = findViewById(R.id.cancelBTN);
-        cancelBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBack();
-            }
-        });
+
     }
     private void goBack()
     {
