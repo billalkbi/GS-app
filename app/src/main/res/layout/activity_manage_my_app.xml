@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".manageMyApp">
+
+
+<ImageView
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    app:srcCompat="@drawable/geeksquad"
+    android:layout_centerHorizontal="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/appointmentList"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="1dp" />
+
+    <TextView
+        android:id="@+id/TVNoAppForToDay"
+        android:layout_width="273dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="502dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="188dp"
+
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="505dp"
+        android:fontFamily="@font/barlow_bold"
+        android:text="YOUR APPOINTMENTS"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancelBTN"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginBottom="86dp"
+        android:background="@drawable/rounded_corners_register"
+        android:text="CANCEL"
+        android:textAppearance="@style/save"
+        android:textColor="@color/black" />
+
+
+</RelativeLayout>
