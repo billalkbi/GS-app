@@ -96,7 +96,7 @@ public class addAppointment extends AppCompatActivity  {
     TextView AddressText ;
     private LocationRequest locationRequest;
 
-  private String typeUser = globalVar.currentUser.typeUser ;
+    private String typeUser = globalVar.currentUser.typeUser ;
 
     DatabaseReference GS_DbRef;
     @Override
@@ -251,14 +251,14 @@ public class addAppointment extends AppCompatActivity  {
         locationRequest.setFastestInterval(2000);
 
 
-    Button getLocation = findViewById(R.id.getBTN);
-    getLocation.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+        Button getLocation = findViewById(R.id.getBTN);
+        getLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-            getCurrentLocation();
-        }
-    });
+                getCurrentLocation();
+            }
+        });
 
 //on submit
         Button submitBTN = findViewById(R.id.saveBTN);
@@ -289,18 +289,18 @@ public class addAppointment extends AppCompatActivity  {
     }
 
 
-//manage go back
+    //manage go back
     private void goBack()
     {
         if (typeUser.equals("tech")){
-        showMainActivityTech();
-       }
-       else if (typeUser.equals("client")) {
-         showMainActivity();
-       }
-       else if (typeUser.equals("admin")) {
-           showMainActivityAdmin();
-       }else {
+            showMainActivityTech();
+        }
+        else if (typeUser.equals("client")) {
+            showMainActivity();
+        }
+        else if (typeUser.equals("admin")) {
+            showMainActivityAdmin();
+        }else {
             Toast.makeText(addAppointment.this, "erreur", Toast.LENGTH_SHORT).show();
         }
 
@@ -378,25 +378,19 @@ public class addAppointment extends AppCompatActivity  {
                                     if (locationResult != null && locationResult.getLocations().size() >0){
 
                                         int index = locationResult.getLocations().size() - 1;
-                                         latitude = locationResult.getLocations().get(index).getLatitude();
-                                         longitude = locationResult.getLocations().get(index).getLongitude();
+                                        latitude = locationResult.getLocations().get(index).getLatitude();
+                                        longitude = locationResult.getLocations().get(index).getLongitude();
 
                                        /*float[] results = new float[3];
                                         Location.distanceBetween(latitude,longitude,latMarcheCentral,longMarcheCentral,results);
                                         Location.distanceBetween(latitude,longitude,latCentreVille, longCentreVille,results);
                                         Location.distanceBetween(latitude,longitude,latMarcheCentral,longMarcheCentral,results);
-
                                         float distanceAnjou = results[0]/1000;
                                         float distnaceMarcher = results[1]/1000;
                                         float distanceCentreville = results[2]/1000;
-
                                         */
-                                        double distancekm = distance( latAnjour, longAnjou,latitude, longitude);
+                                        storeSpinner.setEnabled(false);storeSpinner.setSelection(3);
 
-
-
-
-                                        AddressText.setText("Latitude: "+ latitude + "\n" + "Longitude: "+ longitude+"\n"+"distance"+ distancekm);
                                     }
                                 }
                             }, Looper.getMainLooper());
@@ -466,17 +460,8 @@ public class addAppointment extends AppCompatActivity  {
 
     }
 
-    public static final double RAYON_TERRE = 6371; // Rayon de la terre en kilomètres
 
-    public static double distance(double lat1, double lon1, double lat2, double lon2) {
-        double latDistance = Math.toRadians(lat2 - lat1);
-        double lonDistance = Math.toRadians(lon2 - lon1);
-        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
-                + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))
-                * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
-        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        double distance = RAYON_TERRE * c;
-        return distance;
-    }
+
+
 
 }
