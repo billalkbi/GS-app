@@ -80,7 +80,7 @@ public class addAppointment extends AppCompatActivity  {
     Spinner storeSpinner, reasenSprinner ;
     private String reasenChoice;
     private String dateChoice;
-    private String timeChoice;
+    public String timeChoice;
     private String storeChoice;
     private String month;
     private double longitude, latitude ;
@@ -186,7 +186,7 @@ public class addAppointment extends AppCompatActivity  {
         //drop down menu store picker
         reasenStaticAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //liste stores
-        String[] reasenItems = new String[]{"software windows", "hardware windows", "software Apple", "hardware Apple", "other, specify in description"};
+        String[] reasenItems = new String[]{"select a reason for the appointment","software windows", "hardware windows", "software Apple", "hardware Apple", "other, specify in description"};
 
         ArrayAdapter<String> reasenAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, reasenItems);
@@ -266,7 +266,6 @@ public class addAppointment extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 insertAppointmentData();
-
             }
         });
 
@@ -274,18 +273,47 @@ public class addAppointment extends AppCompatActivity  {
     }
 
 
-
     private void insertAppointmentData(){
         EditText getFullName = findViewById(R.id.fullNameInput);
         EditText getDescription = findViewById(R.id.description);
         EditText getDate = findViewById(R.id.datePicker);
+        Button pickTimeBtn = findViewById(R.id.idBtnPickTime);
+
         String fullName = getFullName.getText().toString();
         String description = getDescription.getText().toString();
         String dateApp = getDate.getText().toString();
-        Appointment appointment = new Appointment(fullName, storeChoice, dateApp, timeChoice,reasenChoice,description);
 
-        GS_DbRef.push().setValue(appointment);
-        Toast.makeText(addAppointment.this, "appointment added succesfully", Toast.LENGTH_SHORT).show();
+        boolean control = true;
+        while(control) {
+
+        if (fullName.equals("")){
+            getFullName.setError("Fill this field");
+            getFullName.requestFocus();
+            return;
+        } else if (storeChoice.equals("location")) {
+            Toast.makeText(addAppointment.this, "select a store", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (dateApp.equals("")) {
+            getDate.setError("Fill this field");
+            getDate.requestFocus();
+            return;
+        } else if (timeChoice==null) {
+            pickTimeBtn.setError("Fill this field");
+            pickTimeBtn.requestFocus();
+            return;
+        } else if (reasenChoice.equals("select a reason for the appointment")) {
+            Toast.makeText(addAppointment.this, "Select a reason", Toast.LENGTH_SHORT).show();
+            return;
+        } else{
+
+            Appointment appointment = new Appointment(fullName, storeChoice, dateApp, timeChoice ,reasenChoice,description);
+            GS_DbRef.push().setValue(appointment);
+            Toast.makeText(addAppointment.this, "appointment added succesfully", Toast.LENGTH_SHORT).show();
+            control = false;
+        }
+
+
+    }
     }
 
 

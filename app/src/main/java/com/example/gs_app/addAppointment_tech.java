@@ -281,12 +281,37 @@ public class addAppointment_tech extends AppCompatActivity  {
         EditText getFullName = findViewById(R.id.fullNameInput);
         EditText getDescription = findViewById(R.id.description);
         EditText getDate = findViewById(R.id.datePicker);
+        Button pickTimeBtn = findViewById(R.id.idBtnPickTime);
+
         String fullName = getFullName.getText().toString();
         String description = getDescription.getText().toString();
         String dateApp = getDate.getText().toString();
-        Appointment appointment = new Appointment(fullName, storeChoice, dateApp, timeChoice,reasenChoice,description);
 
-        GS_DbRef.push().setValue(appointment);
+        if (fullName.equals("")){
+            getFullName.setError("Fill this field");
+            getFullName.requestFocus();
+            return;
+        } else if (storeChoice.equals("location")) {
+            Toast.makeText(addAppointment_tech.this, "Select a store", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (dateApp.equals("")) {
+            getDate.setError("Fill this field");
+            getDate.requestFocus();
+            return;
+        } else if (timeChoice.equals("")) {
+            pickTimeBtn.setError("Fill this field");
+            pickTimeBtn.requestFocus();
+            return;
+        } else if (reasenChoice.equals("select a reason for the appointment")) {
+            Toast.makeText(addAppointment_tech.this, "Select a store", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else {
+            Appointment appointment = new Appointment(fullName, storeChoice, dateApp, timeChoice,reasenChoice,description);
+            Toast.makeText(addAppointment_tech.this, "appointment added succesfully", Toast.LENGTH_SHORT).show();
+
+        }
+        //GS_DbRef.push().setValue(appointment);
         Toast.makeText(addAppointment_tech.this, "appointment added succesfully", Toast.LENGTH_SHORT).show();
     }
 

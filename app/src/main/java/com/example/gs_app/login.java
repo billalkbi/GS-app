@@ -103,7 +103,7 @@ public class login extends AppCompatActivity {
                                                                 @Override
                                                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                                     globalVar.currentUser =  snapshot.getValue(User.class);
-                                                                    Toast.makeText(login.this, "client" +globalVar.currentUser.fullName, Toast.LENGTH_SHORT).show();
+
                                                                 }
 
                                                                 @Override

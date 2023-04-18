@@ -14,6 +14,12 @@
         android:theme="@style/Theme.App_gs"
         tools:targetApi="31">
         <activity
+            android:name=".assign_appt2"
+            android:exported="false" />
+        <activity
+            android:name=".assign_appt"
+            android:exported="false" />
+        <activity
             android:name=".addAppointment_tech"
             android:exported="false" />
         <activity

@@ -69,16 +69,12 @@ public class MainActivity_admin extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                //Intent intent = new Intent(MainActivity_admin.this, assign_appt.class);
-                //startActivity(intent);
-                //finish();
+                Intent intent = new Intent(MainActivity_admin.this, assign_appt.class);
+                startActivity(intent);
+                finish();
             }
         });
-        try {
-            Thread.sleep(4000); // retarder l'exécution de 500 millisecondes
-        } catch (InterruptedException e) {
-            // traitement de l'exception
-        }
+
         tvfullName = findViewById(R.id.fullNametv);
         tvfullName.setText(fullName);
 

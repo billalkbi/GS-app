@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     String fullName = globalVar.currentUser.fullName ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        logoutUser();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseAuth auth = FirebaseAuth.getInstance();
